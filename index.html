@@ -57,6 +57,15 @@
 </section>
 
 <section>
+    <h2>Simple Subtraction Helper</h2>
+    <p>Enter two numbers to subtract:</p>
+    <input type="number" id="subNum1" placeholder="Minuend">
+    <input type="number" id="subNum2" placeholder="Subtrahend">
+    <button onclick="subtractNumbers()">Subtract</button>
+    <p id="subResult"></p>
+</section>
+
+<section>
     <h2>Simple Multiplication Helper</h2>
     <p>Enter two numbers to multiply:</p>
     <input type="number" id="mulNum1" placeholder="First number">
@@ -84,6 +93,13 @@
         const num2 = parseFloat(document.getElementById('addNum2').value);
         const sum = num1 + num2;
         document.getElementById('addResult').innerText = `The result is: ${sum}`;
+    }
+
+    function subtractNumbers() {
+        const num1 = parseFloat(document.getElementById('subNum1').value);
+        const num2 = parseFloat(document.getElementById('subNum2').value);
+        const difference = num1 - num2;
+        document.getElementById('subResult').innerText = `The result is: ${difference}`;
     }
 
     function multiplyNumbers() {
