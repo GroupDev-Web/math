@@ -50,10 +50,28 @@
 <section>
     <h2>Simple Addition Helper</h2>
     <p>Enter two numbers to add:</p>
-    <input type="number" id="num1" placeholder="First number">
-    <input type="number" id="num2" placeholder="Second number">
+    <input type="number" id="addNum1" placeholder="First number">
+    <input type="number" id="addNum2" placeholder="Second number">
     <button onclick="addNumbers()">Add</button>
-    <p id="result"></p>
+    <p id="addResult"></p>
+</section>
+
+<section>
+    <h2>Simple Multiplication Helper</h2>
+    <p>Enter two numbers to multiply:</p>
+    <input type="number" id="mulNum1" placeholder="First number">
+    <input type="number" id="mulNum2" placeholder="Second number">
+    <button onclick="multiplyNumbers()">Multiply</button>
+    <p id="mulResult"></p>
+</section>
+
+<section>
+    <h2>Simple Division Helper</h2>
+    <p>Enter two numbers to divide:</p>
+    <input type="number" id="divNum1" placeholder="Numerator">
+    <input type="number" id="divNum2" placeholder="Denominator">
+    <button onclick="divideNumbers()">Divide</button>
+    <p id="divResult"></p>
 </section>
 
 <footer>
@@ -62,10 +80,28 @@
 
 <script>
     function addNumbers() {
-        const num1 = parseFloat(document.getElementById('num1').value);
-        const num2 = parseFloat(document.getElementById('num2').value);
+        const num1 = parseFloat(document.getElementById('addNum1').value);
+        const num2 = parseFloat(document.getElementById('addNum2').value);
         const sum = num1 + num2;
-        document.getElementById('result').innerText = `The result is: ${sum}`;
+        document.getElementById('addResult').innerText = `The result is: ${sum}`;
+    }
+
+    function multiplyNumbers() {
+        const num1 = parseFloat(document.getElementById('mulNum1').value);
+        const num2 = parseFloat(document.getElementById('mulNum2').value);
+        const product = num1 * num2;
+        document.getElementById('mulResult').innerText = `The result is: ${product}`;
+    }
+
+    function divideNumbers() {
+        const num1 = parseFloat(document.getElementById('divNum1').value);
+        const num2 = parseFloat(document.getElementById('divNum2').value);
+        if (num2 === 0) {
+            document.getElementById('divResult').innerText = "Cannot divide by zero!";
+        } else {
+            const quotient = num1 / num2;
+            document.getElementById('divResult').innerText = `The result is: ${quotient}`;
+        }
     }
 </script>
 
